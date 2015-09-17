@@ -10,6 +10,12 @@ addons:
             - gcc-4.7
             - g++-4.7
 before_install:
+    - sudo update-alternatives --remove-all gcc
+    - sudo update-alternatives --remove-all g++
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 20
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 20
+    - sudo update-alternatives --config gcc
+    - sudo update-alternatives --config g++
     - gcc --version
 install:
     - pip install uwsgi
