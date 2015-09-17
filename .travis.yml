@@ -2,6 +2,13 @@ sudo: false
 language: python
 python:
     - "3.5"
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - gcc-4.7
+            - g++-4.7
 before_install:
     - gcc --version
 install:
