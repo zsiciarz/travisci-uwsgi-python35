@@ -2,6 +2,8 @@ sudo: false
 language: python
 python:
     - "3.5"
+before_install:
+    - gcc --version
 install:
     - pip install uwsgi
 script:
